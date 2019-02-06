@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PhotosDetailsViewController: UIViewController {
 
+    @IBOutlet weak var image_view: UIImageView!
+    var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        image_view.image = image
+        print("test")
     }
     
 

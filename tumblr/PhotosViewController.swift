@@ -70,7 +70,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     // Executes after tap on the row
-    //  - Delects movie
+    //  - Deselects movie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         photosTableView.deselectRow(at: indexPath, animated: true)
     }
@@ -83,7 +83,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
         
         let vc = segue.destination as! PhotosDetailsViewController
-        let cell = sender as! UITableViewCell
-        let index_path = photosTableView.indexPath(for: cell)!
+        let cell = sender as! PhotoTableViewCell
+        
+        vc.image = cell.image_view.image
     }
 }
